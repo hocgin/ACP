@@ -1,5 +1,3 @@
-package in.hocg;
-
 import in.hocg.acp.TaskHandler;
 import in.hocg.acp.bean.Result;
 import in.hocg.acp.bean.articles.Article;

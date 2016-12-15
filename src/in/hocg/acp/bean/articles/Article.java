@@ -15,7 +15,16 @@ public abstract class Article {
 		Article,
 		Link,
 	}
-	
+	public String generate() {
+		String id = String.format("%s%s%s",
+				String.valueOf(url),
+				String.valueOf(title),
+				String.valueOf(describe)
+		);
+//		md5
+		setId(id);
+		return id;
+	}
 	/**
 	 * 虚拟主键
 	 *
