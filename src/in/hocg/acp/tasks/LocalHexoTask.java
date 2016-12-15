@@ -14,7 +14,7 @@ import static in.hocg.acp.bean.Result.Classify.Hexo;
 /**
  * Created by hocgin on 16-12-15.
  */
-public class HexoTask extends BaseTask {
+public class LocalHexoTask extends BaseTask {
 	@Override
 	public Result.Classify getClassify() {
 		return Hexo;
