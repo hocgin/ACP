@@ -34,6 +34,7 @@ public class HexoTask extends BaseTask {
 					try {
 						DefaultArticle article = handler.analysis(new DefaultArticle());
 						article.setSyntax(DefaultArticle.Syntax.Markdown.name());
+						article.setType(Article.Type.Article.name());
 						article.setFrom("http://hocg.in/");
 						article.setAuthor("hocgin");
 						article.generate();

@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * Created by hocgin on 16-12-15.
+ * 推荐文章 任务
  */
 public class RecommendTask extends BaseTask {
 	@Override
