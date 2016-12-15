@@ -1,7 +1,5 @@
 package in.hocg.acp.bean.articles;
 
-import java.util.List;
-
 /**
  * Created by hocgin on 16-12-15.
  * 文本文章
@@ -44,10 +42,6 @@ public class DefaultArticle extends Article {
 	 * 其他描述
 	 */
 	private String other;
-	/**
-	 * 标记 / 分类
-	 */
-	private List<String> tags;
 	
 	public String getSyntax() {
 		return syntax;
@@ -103,13 +97,5 @@ public class DefaultArticle extends Article {
 	
 	public void setOther(String other) {
 		this.other = other;
-	}
-	
-	public List<String> getTags() {
-		return tags;
-	}
-	
-	public void setTags(List<String> tags) {
-		this.tags = tags;
 	}
 }

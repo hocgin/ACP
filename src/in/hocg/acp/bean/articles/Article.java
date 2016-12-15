@@ -1,5 +1,7 @@
 package in.hocg.acp.bean.articles;
 
+import java.util.List;
+
 /**
  * Created by hocgin on 16-12-15.
  */
@@ -43,6 +45,11 @@ public abstract class Article {
 	 * @see Article.Type
 	 */
 	private String type;
+	
+	/**
+	 * 标记 / 分类
+	 */
+	private List<String> tags;
 	
 	public String getId() {
 		return id;
@@ -90,5 +97,13 @@ public abstract class Article {
 	
 	public void setType(String type) {
 		this.type = type;
+	}
+	
+	public List<String> getTags() {
+		return tags;
+	}
+	
+	public void setTags(List<String> tags) {
+		this.tags = tags;
 	}
 }
