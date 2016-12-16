@@ -1,6 +1,6 @@
 import in.hocg.acp.TaskHandler;
 import in.hocg.acp.bean.Result;
-import in.hocg.acp.tasks.LocalHexoTask;
+import in.hocg.acp.tasks.LocalJsonHexoTask;
 
 import static in.hocg.acp.bean.Result.Classify.Hexo;
 
@@ -12,8 +12,7 @@ public class MainTest {
 	
 	@org.junit.Test
 	public void hexo() throws Exception {
-		HANDLER.addTask(new LocalHexoTask());
+		HANDLER.addTask(new LocalJsonHexoTask());
 		Result run = HANDLER.run(Hexo.name());
-		System.out.println(run);
 	}
 }
