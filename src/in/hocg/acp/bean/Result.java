@@ -25,6 +25,11 @@ public class Result {
 	 */
 	private Integer code;
 	/**
+	 * 解释消息
+	 */
+	private String message;
+	
+	/**
 	 * 请求类型 => 处理器类型
 	 * @see in.hocg.acp.bean.Result.Classify
 	 */
@@ -67,5 +72,13 @@ public class Result {
 		}
 		getArticles().addAll(articleCollection);
 		return this;
+	}
+	
+	public String getMessage() {
+		return message;
+	}
+	
+	public void setMessage(String message) {
+		this.message = message;
 	}
 }

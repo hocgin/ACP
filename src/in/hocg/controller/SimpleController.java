@@ -23,6 +23,10 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 public class SimpleController extends BaseController {
 	private static Logger LOG = LoggerFactory.getLogger(SimpleController.class);
+	
+	/**
+	 * 任务管理者
+	 */
 	private static TaskHandler HANDLER = new TaskHandler()
 			.addTask(new LocalJsonHexoTask())
 			.setListener(new TaskHandler.Listener() {
@@ -31,8 +35,10 @@ public class SimpleController extends BaseController {
 					if (result.getCode() == null) {
 						if (result.getArticles() != null) {
 							result.setCode(200);
+							result.setMessage("success");
 						} else {
 							result.setCode(500);
+							result.setMessage("Articles is NULL, Maybe spider occur exception");
 						}
 					}
 				}
@@ -40,6 +46,7 @@ public class SimpleController extends BaseController {
 				@Override
 				public void error(Result result, String message) {
 					result.setCode(505);
+					result.setMessage(message);
 					LOG.error(message);
 				}
 			});
