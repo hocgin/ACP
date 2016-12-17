@@ -1,4 +1,4 @@
-package in.hocg.acp.utils;
+package in.hocg.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -54,5 +54,9 @@ public class Lang {
 		if (e instanceof InvocationTargetException)
 			return wrapThrow(((InvocationTargetException) e).getTargetException());
 		return new RuntimeException(e);
+	}
+	
+	public static  <T> T def(T val, T def) {
+		return val == null ? def : val;
 	}
 }

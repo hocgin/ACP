@@ -1,15 +1,13 @@
 package in.hocg.acp.tasks;
 
-import in.hocg.acp.ACPConfig;
+import in.hocg.ACPConfig;
 import in.hocg.acp.analysis.LocalJsonHexoHandler;
 import in.hocg.acp.bean.Result;
 import in.hocg.acp.bean.articles.Article;
-import in.hocg.acp.bean.articles.UrlArticle;
+import in.hocg.acp.processor.HexoBlogPageProcessor;
 
 import java.io.File;
 import java.util.List;
-
-import static in.hocg.acp.processor.HexoBlogPageProcessor.DOMAIN_DIR;
 
 /**
  * Created by hocgin on 16-12-16.
@@ -23,23 +21,17 @@ public class LocalJsonHexoTask extends BaseTask {
 	}
 	
 	@Override
-	public List<Article> exec() {
-		String jsonPath = String.format("%s%s", ACPConfig.NEW().getLocalSpiderKeepDir(), DOMAIN_DIR);
+	public List<? extends Article> exec() {
+		String jsonPath = String.format("%s%s", ACPConfig.NEW().getLocalSpiderKeepDir(), HexoBlogPageProcessor.DOMAIN_DIR);
 		File jsonDir = new File(jsonPath);
 		if (jsonDir.isDirectory()) {
-			String[] list = jsonDir.list();
-			LocalJsonHexoHandler handler;
-			UrlArticle urlArticle;
-			if (list != null) {
-				for (String aList : list) {
-					String jsonFilePath = String.format("%s/%s", jsonPath, aList);
-					// todo json 转化对象处理
-					handler = LocalJsonHexoHandler.load(new File(jsonFilePath));
-					urlArticle = new UrlArticle();
-					handler.analysis(urlArticle);
+			File[] list = jsonDir.listFiles();
+			if (list != null && list.length != 0) {
+				for (File aList : list) {
+					articles().addAll(LocalJsonHexoHandler.load(aList).analysis());
 				}
 			}
 		}
-		return null;
+		return articles();
 	}
 }

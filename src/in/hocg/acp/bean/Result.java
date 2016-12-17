@@ -61,7 +61,7 @@ public class Result {
 		this.articles = articles;
 	}
 	
-	public Result addArticle(List<Article> articleCollection) {
+	public Result addArticle(List<? extends Article> articleCollection) {
 		if (getArticles() == null) {
 			setArticles(new ArrayList<>());
 		}

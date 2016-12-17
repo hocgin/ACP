@@ -53,7 +53,7 @@ public class TaskHandler {
 		for (Task task : TASKS) {
 			if (Objects.equals(task.getClassify().name(), classify)) {
 				invalidClassify = false;
-				List<Article> articleCollection = task.exec();
+				List<? extends Article> articleCollection = task.exec();
 				if (articleCollection != null) {
 					result.addArticle(articleCollection);
 				}

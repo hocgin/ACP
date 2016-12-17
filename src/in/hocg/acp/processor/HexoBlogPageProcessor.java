@@ -1,6 +1,5 @@
 package in.hocg.acp.processor;
 
-import in.hocg.acp.ACPConfig;
 import in.hocg.acp.bean.articles.Article;
 import in.hocg.acp.bean.articles.UrlArticle;
 import us.codecraft.webmagic.Page;
@@ -35,7 +34,7 @@ public class HexoBlogPageProcessor implements PageProcessor {
 	public static void main(String[] args) throws JMException {
 		Spider.create(new HexoBlogPageProcessor())
 				.addUrl(DOMAIN)
-				.addPipeline(new JsonFilePipeline(ACPConfig.NEW().getLocalSpiderKeepDir()))
+				.addPipeline(new JsonFilePipeline("/home/hocgin/Documents/Project/Sync/ContentProvide/resources/spider/"))
 				.thread(5).run();
 	}
 	
