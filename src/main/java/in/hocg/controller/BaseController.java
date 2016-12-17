@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public abstract class BaseController {
 	
-	public Map<String, Object> json_success(String message, Object result) {
+	public Map<String, Object> json_success(final String message, final Object result) {
 		return new HashMap<String, Object>(){{
 			put("code", 200);
 			put("message", message);
@@ -21,7 +21,7 @@ public abstract class BaseController {
 	}
 	
 	
-	public Map<String, Object> json_fail(int code, String message) {
+	public Map<String, Object> json_fail(final int code, final String message) {
 		return new HashMap<String, Object>(){{
 			put("code", code);
 			put("message", message);

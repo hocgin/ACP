@@ -16,7 +16,7 @@ public class ACPConfig {
 	 * @return
 	 */
 	public String getLocalSpiderKeepDir() {
-		String classPath = ClassLoader.getSystemResource("").getPath();
+		String classPath = "/tmp/";
 		return String.format("%s%s", classPath, "ContentProvide/resources/spider/");
 	}
 }
