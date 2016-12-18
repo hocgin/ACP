@@ -29,7 +29,6 @@ public class LocalJsonHexoHandler {
 	public List<? extends Article> analysis() {
 		String json = Files.read(file);
 		HocginSpider spider = builder.create().fromJson(json, HocginSpider.class);
-		// todo 进行json 转对象处理
 		return spider.getArticles();
 	}
 }

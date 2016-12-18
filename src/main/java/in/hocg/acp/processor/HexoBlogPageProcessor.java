@@ -23,11 +23,11 @@ public class HexoBlogPageProcessor implements PageProcessor {
 	/**
 	 * 爬抓域名起点
 	 */
-	public final static String DOMAIN = "http://hocg.in";
+	public static String DOMAIN = "http://hocg.in";
 	/**
 	 * 存储目录名
 	 */
-	public final static String DOMAIN_DIR = "hocg.in";
+	public final static String DOMAIN_DIR = DOMAIN.replace("http://", "");
 	
 	private Site site = Site.me().setRetryTimes(3).setSleepTime(100);
 	

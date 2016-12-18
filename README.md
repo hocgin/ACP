@@ -9,3 +9,12 @@
 
 #### `/articles` 执行**Task**
 > classify 默认 `Hexo`
+
+## 使用
+> 默认爬 `http://hocg.in`
+
+1. 打包后
+2. **RUN**
+```shell
+java -jar provide-1.0-SNAPSHOT.jar 'http://hocg.in'
+```
